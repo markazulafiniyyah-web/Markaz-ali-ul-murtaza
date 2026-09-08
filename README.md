@@ -84,3 +84,24 @@ python3 build_static_hadith.py   # rebuilds hadith/ + updates sitemap.xml
 ```
 
 Translations are offered in **30 languages** in the interactive library (live machine translation); the static archive carries the authoritative Arabic + English for search engines.
+
+## ☁️ 30-language indexing — Cloudflare Worker (edge rendering)
+
+The Worker in `worker/` turns every hadith page into **30 indexable language URLs**
+(`/hadith/bukhari/1.html?lang=ur`, `?lang=tr`, …) with proper `hreflang` tags.
+Translations happen once per hadith+language on first request, then are cached
+permanently at the edge — Google indexes each language version as it crawls.
+
+**Deploy (free plan):**
+```bash
+npm i -g wrangler
+wrangler login
+cd <this repo>
+wrangler deploy -c worker/wrangler.toml
+```
+Then attach your domain in the Cloudflare dashboard (Workers → Settings → Domains).
+Optional: raise the MyMemory fallback quota — register a free key at
+mymemory.translated.net and run `wrangler secret put MM_EMAIL`.
+
+Language sitemaps: `sitemap-langs.xml` → `sitemaps/lang/<code>.xml` (281 URLs × 30 languages),
+regenerate with `python3 build_lang_sitemaps.py`.

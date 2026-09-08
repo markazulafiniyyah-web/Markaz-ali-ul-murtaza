@@ -1,0 +1,13 @@
+# Deploy: npm i -g wrangler && wrangler login && wrangler deploy -c worker/wrangler.toml
+name = "markaz-ali-ul-murtaza"
+main = "worker/worker.js"
+compatibility_date = "2026-09-01"
+
+[assets]
+directory = "."
+binding = "ASSETS"
+run_worker_first = true
+
+# Optional: register a free MyMemory key (raises its daily quota) — then:
+#   wrangler secret put MM_EMAIL
+# and enter the email you registered at mymemory.translated.net
