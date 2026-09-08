@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 560" role="img" aria-label="Al-Qur'an al-Karim — Hifz, Tajweed, Qira'at, Tafseer">
+      <defs>
+        <linearGradient id="hAbg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#01411C"/><stop offset=".55" stop-color="#0B6E4F"/><stop offset="1" stop-color="#0E7C86"/></linearGradient>
+        <linearGradient id="hAgold" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#F9E9B9"/><stop offset=".5" stop-color="#F0C75E"/><stop offset="1" stop-color="#D9A62E"/></linearGradient>
+        <pattern id="hApat" width="90" height="90" patternUnits="userSpaceOnUse"><path d="M45 10l9 26 26 9-26 9-9 26-9-26-26-9 26-9z" fill="none" stroke="#F0C75E" stroke-opacity=".12"/></pattern>
+      </defs>
+      <rect width="1200" height="560" rx="28" fill="url(#hAbg)"/>
+      <rect width="1200" height="560" rx="28" fill="url(#hApat)"/>
+      <rect x="26" y="26" width="1148" height="508" rx="20" fill="none" stroke="#F0C75E" stroke-opacity=".35" stroke-width="1.5"/>
+      <rect x="40" y="40" width="1120" height="480" rx="16" fill="none" stroke="#fff" stroke-opacity=".12"/>
+      <path d="M1030 108a72 72 0 1 0 40 133 80 80 0 1 1-40-133z" fill="url(#hAgold)" opacity=".92"/>
+      <circle cx="1082" cy="132" r="11" fill="#F0C75E"/>
+      <text x="600" y="272" text-anchor="middle" font-family="Amiri,'Noto Naskh Arabic',serif" font-size="118" font-weight="700" fill="url(#hAgold)">الْقُرْآنُ الْكَرِيمُ</text>
+      <text x="600" y="356" text-anchor="middle" font-family="Amiri,'Noto Naskh Arabic',serif" font-size="30" fill="#fff" opacity=".88">حِفْظٌ · تَجْوِيدٌ · قِرَاءَاتٌ · تَفْسِيرٌ</text>
+      <g><circle cx="510" cy="440" r="11" fill="#F0C75E"/><circle cx="570" cy="440" r="11" fill="#34D399"/><circle cx="630" cy="440" r="11" fill="#F472B6"/><circle cx="690" cy="440" r="11" fill="#FB923C"/></g>
+    </svg>
