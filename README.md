@@ -74,3 +74,13 @@ The site is fully crawlable (semantic HTML, robots.txt, sitemap.xml with `lastmo
 7. **WhatsApp**: broadcast the donate link with the pre-filled message flow; add the QR of your domain in the madrasa.
 8. Add **GA4** analytics to watch which languages/countries convert.
 9. Keep content fresh (hadith data is versioned upstream) so crawlers return often.
+
+## 📄 Static hadith archive (Google-indexable)
+
+Every one of the **50,884 hadiths** is also published as plain HTML (Arabic + English) under `hadith/<book>/<page>.html` — no JavaScript needed, fully crawlable by Google/Bing. Regenerate anytime after data updates:
+
+```bash
+python3 build_static_hadith.py   # rebuilds hadith/ + updates sitemap.xml
+```
+
+Translations are offered in **30 languages** in the interactive library (live machine translation); the static archive carries the authoritative Arabic + English for search engines.
