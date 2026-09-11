@@ -114,7 +114,36 @@ nav.pn a.ghost{background:#fff;color:var(--green);border:1.5px solid var(--green
 ol.pages{columns:2;font-size:14.5px;line-height:2.1}
 ol.pages a{color:var(--green);text-decoration:none}
 footer{background:#01411c;color:#cfe9d9;text-align:center;padding:20px;font-size:13px;margin-top:30px}
-@media(max-width:600px){.h .ar{font-size:21px}h1{font-size:22px}}
+html{-webkit-text-size-adjust:100%}
+h1,.ar-name,.meta,nav.crumb{overflow-wrap:anywhere}
+.h .en,.h .nar{overflow-wrap:anywhere;hyphens:auto}
+@media(max-width:640px){
+  .wrap{padding:0 14px}
+  ol.pages{columns:1}
+  header.site{padding:10px 0}
+  header.site .wrap{justify-content:center;text-align:center;gap:6px}
+  .brand{font-size:17px}
+  h1{font-size:20px}
+  .ar-name{font-size:24px}
+  article.h{padding:16px;border-radius:12px}
+  .h .ar{font-size:19px}
+  nav.pn a{padding:9px 14px;font-size:13px}
+  .langs a{font-size:11.5px;padding:4px 10px}
+  footer{padding:16px 12px}
+}
+/* Urdu: Nastaliq + generous line-height */
+html[lang="ur"] body{font-family:'Noto Nastaliq Urdu',-apple-system,'Segoe UI',Arial,sans-serif;line-height:2.2}
+html[lang="ur"] .h .en{font-size:16px;line-height:2.4}
+html[lang="ur"] h1,html[lang="ur"] h2.ch,html[lang="ur"] nav.pn a{line-height:2}
+/* Arabic-script RTL UI languages */
+html[dir="rtl"] .h .en,html[dir="rtl"] .h .nar{text-align:right}
+html[dir="rtl"] nav.crumb,html[dir="rtl"] .meta{text-align:right}
+html[dir="rtl"] .langs,html[dir="rtl"] nav.pn{direction:rtl}
+html[dir="rtl"] ol.pages{direction:rtl}
+/* CJK: comfortable line-height */
+html[lang="zh"] body,html[lang="ja"] body,html[lang="ko"] body{line-height:1.85}
+/* Amiri for Arabic-script UI text (fa/ps/sd/ks/ar) */
+html[lang="fa"] .h .en,html[lang="ps"] .h .en,html[lang="sd"] .h .en,html[lang="ks"] .h .en{font-family:'Noto Naskh Arabic',Amiri,serif;font-size:17px;line-height:1.9}
 `;
 
 function hreflangs(path) {
@@ -147,7 +176,7 @@ ${hreflangs(path)}
 <meta property="og:type" content="article">
 <meta property="og:title" content="${esc(title)}">
 <meta property="og:url" content="${canon}">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;700${lang === "ur" ? "&family=Noto+Nastaliq+Urdu:wght@400;700" : ""}&display=swap" rel="stylesheet">
 <style>${CSS}</style>
 </head>
 <body>

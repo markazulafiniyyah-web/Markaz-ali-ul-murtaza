@@ -43,8 +43,8 @@ html[dir="rtl"] body{font-size:18px}
 html[dir="rtl"] h1,html[dir="rtl"] h2,html[dir="rtl"] h3,html[dir="rtl"] h4,html[dir="rtl"] .kicker{letter-spacing:0;line-height:1.35}
 html[dir="rtl"] .hero-sub,html[dir="rtl"] .section-sub{line-height:1.9}
 
-.skip{position:absolute;left:-9999px;top:0;background:#fff;padding:10px 16px;z-index:200;border-radius:0 0 12px 0}
-.skip:focus{left:0}
+.skip{position:absolute;top:10px;inset-inline-start:10px;z-index:200;background:#1d1d1f;color:#fff;padding:10px 18px;border-radius:12px;text-decoration:none;font-size:14px;transform:translateY(-400%);opacity:0;pointer-events:none;transition:transform .25s,opacity .25s}
+.skip:focus{transform:translateY(0);opacity:1;pointer-events:auto}
 
 /* ---------------- buttons ---------------- */
 .btn{

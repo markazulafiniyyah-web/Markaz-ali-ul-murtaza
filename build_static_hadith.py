@@ -54,7 +54,22 @@ h2.ch small{font-family:-apple-system,'Segoe UI',Arial,sans-serif;font-size:13px
 ol.pages{columns:2;font-size:14.5px;line-height:2.1}
 ol.pages a{color:var(--green);text-decoration:none}
 footer{background:#01411c;color:#cfe9d9;text-align:center;padding:20px;font-size:13px;margin-top:30px}
-@media(max-width:600px){.h .ar{font-size:21px}h1{font-size:22px}}
+html{-webkit-text-size-adjust:100%}
+h1,.ar-name,.meta,nav.crumb{overflow-wrap:anywhere}
+.h .en,.h .nar{overflow-wrap:anywhere;hyphens:auto}
+@media(max-width:640px){
+  .wrap{padding:0 14px}
+  ol.pages{columns:1}
+  header.site{padding:10px 0}
+  header.site .wrap{justify-content:center;text-align:center;gap:6px}
+  .brand{font-size:17px}
+  h1{font-size:20px}
+  .ar-name{font-size:24px}
+  article.h{padding:16px;border-radius:12px}
+  .h .ar{font-size:19px}
+  nav.pn a{padding:9px 14px;font-size:13px}
+  footer{padding:16px 12px}
+}
 """
 
 def esc(s): return html.escape(s or "", quote=False)
@@ -179,9 +194,11 @@ def main():
             sitemap_urls.append(canon)
         print(f"  ✓ {slug}: {n:,} hadiths → {pages} pages")
 
-    # ---- append static pages to sitemap.xml ----
+    # ---- append static pages to sitemap.xml (idempotent) ----
     with io.open("sitemap.xml", encoding="utf-8") as f:
         sm = f.read()
+    import re as _re
+    sm = _re.sub(r'\n?  <url><loc>https://markazalimurtaza\.com/hadith/.*?</url>', '', sm, flags=_re.S)
     entries = "\n".join(
         f'  <url><loc>{u}</loc><lastmod>2026-09-08</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>'
         for u in sitemap_urls)
